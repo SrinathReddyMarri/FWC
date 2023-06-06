@@ -1,0 +1,107 @@
+\def\mytitle{IDE ASSIGNMENT}
+\def\myauthor{Marri Srinath Reddy}
+\def\contact{srinathreddymarri@gmail.com}
+\def\mymodule{Future Wireless Communications (FWC)}
+
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amsthm}
+
+\title{\mytitle}
+\author{\myauthor\hspace{1em}\\\contact\\IITH\hspace{0.5em}-\hspace{0.6em}\mymodule}
+\begin{document}
+\maketitle
+\tableofcontents
+\section{\textbf{Question}}
+The output F of the digital circuit shown can be written in the form(s)\rule{2cm}{0.4pt}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figs/2x1 mux.jpg}
+    \caption{2x1 mux}
+    \label{fig:my_label}
+\end{figure}
+\begin{enumerate}[label=(\Alph*)]
+   \item $\overline {A \cdot B}$
+   \item $\overline A$+$\overline B$
+   \item $\overline{\text A+B}$
+   \item $\overline A \cdot \overline B$
+\end{enumerate}
+
+\section{\textbf{Answer}}
+The above question can be solved by using 2x1 mux and boolean algebra. steps are given below\\
+$\rightarrow \overline B \cdot I_0 + B \cdot I_1 = Y$\\
+$\rightarrow \overline B\cdot1 + B\cdot0 = Y$\\
+$\rightarrow Y = \overline B$\\
+$\rightarrow F = \overline A\cdot I_0 + A \cdot I_1$\\
+$\rightarrow F = \overline A \cdot 1 + A \cdot \overline B$\\
+$\rightarrow F = \overline A + A \cdot \overline B$\\
+$\rightarrow F = \overline A + \overline B$\\
+from de-morgan's theorem\\
+$\rightarrow \overline A + \overline B = \overline A \cdot \overline B$
+\section{\centering Truth Table}
+\begin{tabularx}{0.45\textwidth}{
+    | >{\centering\arraybackslash}X
+    | >{\centering\arraybackslash}X
+    | >{\centering\arraybackslash}X |
+ }\hline
+ \textbf{$A$}&\textbf{$B$}&\textbf{$F$}\\
+ \hline
+ 0&0&1\\
+ \hline
+ 0&1&1\\
+ \hline
+ 1&0&1\\
+ \hline
+ 1&1&0\\
+ \hline
+\end{tabularx}
+\section{\textbf{Components}}
+    \begin{tabularx}{0.45\textwidth}{
+           | >{\centering\arraybackslash}X
+           | >{\centering\arraybackslash}X
+	   | >{\centering\arraybackslash}X |
+           }
+           \hline
+	   \textbf{Components}&\textbf{Values}&\textbf{Quantity}\\
+	   \hline
+           Arduino & Uno & 1\\ 
+	   \hline 
+	   Jumper Wires & M-M & 5\\ 
+	   \hline
+	   Breadboard & & 1\\
+           \hline		
+   \end{tabularx} 
+ \section{\textbf{Implementation}}
+\begin{tabularx}{0.45\textwidth}{			
+	| >{\centering\arraybackslash}X		
+	| >{\centering\arraybackslash}X				
+	| >{\centering\arraybackslash}X|}			
+\hline								
+    \textbf{Arduino PIN}&\textbf{INPUT}&\textbf{OUTPUT}\\
+	\hline
+	2&$A$& \\
+	\hline
+	3&$B$&\\
+	\hline
+	13&&$F$\\
+	\hline
+\end{tabularx}
+
+\section{\textbf{Procedure}}
+\begin{enumerate}[label={\arabic*}.]
+    \item Connect the circuit as per the above table.
+    \item Connect inputs to Vcc for Logic 1, ground for Logic 0.
+    \item Execute the circuit using the below codes.\\
+\end{enumerate}
+\begin{tabularx}{0.45\textwidth}{| >{\centering\arraybackslash}X|}
+	\hline
+	https://github.com/SrinathReddyMarri/FWC\\/blob/master/IDE\%20platformio/mux.cpp\\
+	\hline
+    \end{tabularx}\\
+    \end{document}
